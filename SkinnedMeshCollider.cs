@@ -51,28 +51,33 @@ public class SkinnedMeshCollider : MonoBehaviour
 
         for (int index = 0; index < triangleList.Count; index += 3)
         {
+            bool canAddTriangle = false;
             var Tri0 = triangleList[index];
             var Tri1 = triangleList[index + 1];
             var Tri2 = triangleList[index + 2];
 
-            if (WithinRange(_SourceMeshTransform.TransformPoint(ActiveVerts[Tri0]), Target.position, TargetDistanceThreshold) == false)
+            if (WithinRange(_SourceMeshTransform.TransformPoint(ActiveVerts[Tri0]), Target.position, TargetDistanceThreshold) == true)
             {
-                continue;
+                canAddTriangle = true;
             }
 
-            if (WithinRange(_SourceMeshTransform.TransformPoint(ActiveVerts[Tri1]), Target.position, TargetDistanceThreshold) == false)
+            if (WithinRange(_SourceMeshTransform.TransformPoint(ActiveVerts[Tri1]), Target.position, TargetDistanceThreshold) == true)
             {
-                continue;
+                  canAddTriangle = true;
             }
 
-            if (WithinRange(_SourceMeshTransform.TransformPoint(ActiveVerts[Tri2]), Target.position, TargetDistanceThreshold) == false)
+            if (WithinRange(_SourceMeshTransform.TransformPoint(ActiveVerts[Tri2]), Target.position, TargetDistanceThreshold) == true)
             {
-                continue;
+                  canAddTriangle = true;
             }
-
-            modifiedTriangleList.Add(Tri0);
-            modifiedTriangleList.Add(Tri1);
-            modifiedTriangleList.Add(Tri2);
+            
+            if(canAddTriangle)
+            {
+             modifiedTriangleList.Add(Tri0);
+             modifiedTriangleList.Add(Tri1);
+             modifiedTriangleList.Add(Tri2);
+            }
+           
         }
 
 
