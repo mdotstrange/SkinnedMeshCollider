@@ -3,6 +3,6 @@ Created a skinned mesh Collider script based on a reddit post + comments by 907g
 
 I'm using this for giant boss fights ^_^ Thanks to 907games for being so generous with his tips and info!
 
-This script allows you to generate a mesh collider for an animated skinned mesh renderer, it generates the mesh/collider based on the distance from the target in LateUpdate.
+This script allows you to generate a mesh collider for an animated skinned mesh renderer, it generates the mesh/collider based on the distance from the target in LateUpdate. (The eyeball is the target in the below image)
 
 ![alt text](https://i.imgur.com/8OyjOqf.png)
